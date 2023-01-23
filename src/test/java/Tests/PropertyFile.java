@@ -8,9 +8,9 @@ public class PropertyFile {
     static Properties prop = new Properties();
 
     public static void main(String[] args) {
-        getProperties();
-        setProperties();
-        getProperties();
+//        getProperties();
+//        setProperties();
+//        getProperties();
     }
 
     public static void getProperties() {
@@ -24,8 +24,8 @@ public class PropertyFile {
                 String url = prop.getProperty("url");
                 String browser = prop.getProperty("browser");
                 System.out.println(browser);
-                Test.browserName = browser;
-                Test.url = url;
+                BaseTest.browserName = browser;
+                BaseTest.url = url;
 
             } catch (IOException e) {
                 throw new RuntimeException(e);
@@ -43,6 +43,14 @@ public class PropertyFile {
                 throw new RuntimeException(e);
             }
         }
+
+    public static long getImplicitlyWait() {
+        String implicitlyWait = prop.getProperty("implicitlyWait");
+        if(implicitlyWait != null) return Long.parseLong(implicitlyWait);
+        else throw new RuntimeException("implicitlyWait not specified in the Configuration.properties file.");
+    }
+
+
 
 
     }
