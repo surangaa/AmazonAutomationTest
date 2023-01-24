@@ -4,6 +4,7 @@
     <test name="testCase1">
         <parameter name="searchtext" value="Automation"></parameter>
         <parameter name="itemqty" value="2"></parameter>
+        <parameter name="category" value="Books"></parameter>
         <classes>
             <class name="Tests.AmazonAutomationTest"></class>
             <class name="Tests.BaseTest"></class>

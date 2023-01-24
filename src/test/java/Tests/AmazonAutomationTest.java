@@ -55,6 +55,7 @@ public class AmazonAutomationTest extends BaseTest{
 
         ProductDetailsPage PDP = new ProductDetailsPage(driver);
         Reporter.log("Amazon Product detial page is opened now");
+
         if(PDP.page_load()){
             //Get unitprice
             System.out.println(PDP.Get_UnitPrice());

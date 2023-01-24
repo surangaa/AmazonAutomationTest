@@ -1,6 +1,5 @@
 package pages;
 
-import org.bouncycastle.jcajce.provider.asymmetric.EC;
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
@@ -40,7 +39,7 @@ public class ProductDetailsPage {
         return PDPage_Prod_title;
     }
 
-//select product quantity as 2
+   //select product quantity
     public void Select_quantity(String itemqty){
         WebElement ele1 = driver.findElement(Qty_dropdown);
         Select qty_dropdown = new Select(ele1);
