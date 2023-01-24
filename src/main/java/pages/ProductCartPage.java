@@ -17,23 +17,26 @@ public class ProductCartPage {
 
     By Cart_TotalPrice = By.xpath("//body[1]/div[1]/div[2]/div[3]/div[3]/div[1]/div[2]/div[1]/div[1]/form[1]/div[3]/span[2]/span[1]");
 
-    //Constructor that will be automatically called as soon as the object of the class is created
+ //constructor
     public ProductCartPage(WebDriver driver){
         this.driver = driver;
     }
 
+    //get the product title
     public String validateProductname(){
         String CP_Product_title = driver.findElement(CP_Product_Title).getText();
         return CP_Product_title;
 
     }
 
+    //get the product quantity
     public String validateProductqty(){
         String CP_Product_qty = driver.findElement(CP_Product_Qty).getText();
         return CP_Product_qty;
 
     }
 
+    //get the total price of the cart
     public Double validateTotalprice(){
         String Cart_TotalPrice = driver.findElement(Cart_Total_Price).getText();
         Cart_TotalPrice = Cart_TotalPrice.replace("$","");
@@ -43,11 +46,13 @@ public class ProductCartPage {
 
     }
 
+    //click on delete link to clear the cart
     public void clearCart(){
          driver.findElement(Delete_Link).click();
 
     }
 
+    //get the total proce again to verify whether the cart is empty
     public String VerifyEmptyCart(){
         String Cart_Total_Price = driver.findElement(Cart_TotalPrice).getText();
         return Cart_Total_Price;

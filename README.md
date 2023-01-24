@@ -28,14 +28,21 @@ Workaround - First removed $ sign from the extracted string. Then, used Double.p
 
 - Observed that between some steps, there should be a wait time in order to load the page or elements.
 
-Workaround - define an "implictWait=20" in config.properties file and used if the test method.
+Workaround - define an "implictWait=20" in config.properties file and used it in the test method.
 
-- Observed that in some attempts, test get failed due to Product Details page is not getting loaded completely. 
+- Parameterization test data.
 
-Workaround - implemented a method to handle the timeout exception.
+workaround - There were two possible ways to parameterize tests. That is either using a xml or excel file.
+first, study some website references on how to parameterize the test data. Then, created a mock class and got familiarized with it. 
+Then applied it to the testclass.  
    
 
+##Challenges
+- an error was displayed on amazon product details page time to time. This is a sporadic issue and cannot recreate in manual navigation.
+As a workaround, handle the timeout exception and print out a meaningful error message on the console.
 
-
+##Things to further research on
+- I was searching for a way to parameterize the xpath in order to select different 'review star' option and 'languages'.
+Need more time to research on this further.
 
 

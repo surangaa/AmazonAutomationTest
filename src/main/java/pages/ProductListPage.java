@@ -14,26 +14,31 @@ public class ProductListPage {
     By second_Product = By.xpath("//body/div[@id='a-page']/div[@id='search']/div[1]/div[1]/div[1]/span[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/h2[1]/a[1]");
 
 //    By second_Product = By.xpath("//span[contains(text(),'The Robots Are Coming!: The Future of Jobs in the ')]");
+
+    //constructor
     public ProductListPage(WebDriver driver){
         this.driver = driver;
     }
 
 
+    //scroll page down
     public void ScrollPageDown(){
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,1000)");
 
     }
 
+    //select four star review link
     public void Select_Review(){
         driver.findElement(fourstar_Review).click();
     }
 
-
+   //select language as "English"
     public void Select_Language(){
         driver.findElement(english_Checkbox).click();
     }
 
+    //get second element of the product list
     public String Get_SecondElement(){
        String product_title = driver.findElement(second_Product).getText();
        driver.findElement(second_Product).click();
@@ -41,6 +46,7 @@ public class ProductListPage {
 
     }
 
+    //scroll page down further
     public void ScrollPageDown2(){
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,2000)");

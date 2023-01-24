@@ -14,14 +14,14 @@ public class AmazonAutomationTest extends BaseTest{
 
 
     @Test
-    @Parameters({"searchtext","itemqty"})
-    public static void testCase1(String searchtext, String itemqty){
+    @Parameters({"searchtext","itemqty","category"})
+    public static void testCase1(String searchtext, String itemqty, String category){
 
 //Amazon Home page workflow
         AmazonHomePage AHP = new AmazonHomePage(driver);
         Reporter.log("Amazon Home page is opened now");
         //select Books from Category list
-        AHP.Select_Categorylist();
+        AHP.Select_Categorylist(category);
         PropertyFile.getImplicitlyWait();
 
         //Search for "Automation" in search box
@@ -66,7 +66,7 @@ public class AmazonAutomationTest extends BaseTest{
             Assert.assertEquals(PDPage_Prod_title, product_title);
 
             //Select 2 items to buy
-            PDP.Select_quantity();
+            PDP.Select_quantity(itemqty);
 
             //click "Add to cart" btn
             PDP.click_Addtocart();

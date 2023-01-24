@@ -40,24 +40,27 @@ public class ProductDetailsPage {
         return PDPage_Prod_title;
     }
 
-    public void Select_quantity(){
+//select product quantity as 2
+    public void Select_quantity(String itemqty){
         WebElement ele1 = driver.findElement(Qty_dropdown);
         Select qty_dropdown = new Select(ele1);
-        qty_dropdown.selectByVisibleText("2");
+        qty_dropdown.selectByVisibleText(itemqty);
     }
 
-
+    //select "add to cart" button
     public void click_Addtocart(){
         driver.findElement(BtnAddtoCart).click();
     }
 
+    //select "go to cart" button
     public void click_Gottocart(){
         driver.findElement(BtnGotoCart).click();
     }
 
+    //handle the page not loading exception
     public boolean page_load(){
         try {
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
             wait.until(ExpectedConditions.elementToBeClickable(BtnAddtoCart));
             return true;
         }
